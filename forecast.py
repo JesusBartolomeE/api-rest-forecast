@@ -36,7 +36,7 @@ class City:
     def get_key_city(self,data):
         data=(data[0]['Key'])
         return self.get_forecast_city(data)
-        
+
     def get_forecast_city(self,data):
         apikey=os.getenv("SECRET_KEY")
         params={'apikey':apikey}

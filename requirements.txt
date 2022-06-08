@@ -1,0 +1,4 @@
+Flask==2.1.2
+sqlite3 == 3.31.1
+marshmallow==3.16.0 
+
