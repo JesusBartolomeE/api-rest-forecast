@@ -5,7 +5,7 @@ from search import Search
 from utils import validate_fields
 from flask import jsonify
 from schemas import ResponseSchema
-from utils import validate_result
+from utils import validate_get_city_information
 
 app = Flask(__name__)
 app.secret_key = 'mysecretkey'
@@ -26,7 +26,7 @@ def get_forecast():
             country=request.json['country']
             valid,fields=validate_fields(user_name,country)
             if valid:
-                response=validate_result(**fields)
+                response=validate_get_city_information(**fields)
                 return response
             else:
                 return ResponseSchema({}, f'{fields}').__dict__

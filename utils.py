@@ -14,7 +14,7 @@ def validate_fields(user_name,country):
     except marshmallow.ValidationError as e:
         return False,e
 
-def validate_result(**kwargs):
+def validate_get_city_information(**kwargs):
     valid,weather,temperature=city.get_city_information(kwargs['country'],kwargs['user_name'])
     if valid:
         return ResponseSchema(

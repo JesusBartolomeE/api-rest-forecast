@@ -36,7 +36,7 @@ class DB:
                     NULL , ? , ?, ? , ? , CURRENT_DATE)""",(values[0],values[1],values[2],values[3])
             )
             con.commit()
-            print('Datos insertados correctamente')
+            print('Datos insertados en la base de datos correctamente')
             return True
         except Exception as e:
             print(e)  
