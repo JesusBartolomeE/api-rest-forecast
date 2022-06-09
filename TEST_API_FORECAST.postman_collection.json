@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "fef92e5c-34c2-4b67-80cc-26bd13785857",
+		"name": "TEST_API_FORECAST",
+		"description": "API REST creada para consultar el clima de un país, para esto es necesario solicitar la petición con el nombre de quien realiza la petición así como el nombre del país a consultar.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19413505"
+	},
+	"item": [
+		{
+			"name": "GET_FORECAST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Eduardo\",\n    \"country\": \"Rumania\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/get-forecast",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"get-forecast"
+					]
+				},
+				"description": "Para consultar el clima de un país, es necesario solicitar la petición en formato JSON, pasandole el nombre de quien realiza la petición y el país a consultar.\n\nSi se ha realizado la petición de manera correcta, la respuesta sera un JSON con el clima, la temperatura,mensaje de estado,estado del error y un status code."
+			},
+			"response": [
+				{
+					"name": "GET_FORECAST",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Eduardo\",\n    \"country\": \"Rumania\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/get-forecast",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"get-forecast"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 Jun 2022 19:52:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"OK\",\n    \"result\": {\n        \"temperature\": \"13.2°C\",\n        \"weather\": \"Rain\"\n    },\n    \"statusCode\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "CHECK-HISTORY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/check-history?user_name=Irvyn",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"check-history"
+					],
+					"query": [
+						{
+							"key": "user_name",
+							"value": "Irvyn"
+						},
+						{
+							"key": "location",
+							"value": "Mexico",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "DESC",
+							"disabled": true
+						},
+						{
+							"key": "ID",
+							"value": "6",
+							"disabled": true
+						}
+					]
+				},
+				"description": "En el endpoint CHECK-HISTORY se puede realizar consultas del historial de las solicitudes realizadas.\n\nSe puede filtar la busqueda por:\n\n*   Nombre de usuario (user_name).\n*   Locación (location).\n*   Por ID(ID)\n*   El orden, Ascendente o Descendente (ASC/DESC)."
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/check-history?user_name=Irvyn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"check-history"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "Irvyn"
+								},
+								{
+									"key": "location",
+									"value": "Mexico",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "DESC",
+									"disabled": true
+								},
+								{
+									"key": "ID",
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.1.2 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Jun 2022 21:32:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1556"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"OK\",\n    \"result\": {\n        \"count\": 7,\n        \"data\": [\n            {\n                \"DATE\": \"2022-06-06\",\n                \"FORECAST\": \"Cloudy\",\n                \"ID\": 4,\n                \"LOCATION\": \"Manchester\",\n                \"TEMP\": \"12.3°C\",\n                \"USER_NAME\": \"Irvyn\"\n            },\n            {\n                \"DATE\": \"2022-06-06\",\n                \"FORECAST\": \"Mostly cloudy\",\n                \"ID\": 5,\n                \"LOCATION\": \"germany\",\n                \"TEMP\": \"16.1°C\",\n                \"USER_NAME\": \"Irvyn\"\n            },\n            {\n                \"DATE\": \"2022-06-06\",\n                \"FORECAST\": \"Thunderstorm\",\n                \"ID\": 6,\n                \"LOCATION\": \"Peru\",\n                \"TEMP\": \"22.8°C\",\n                \"USER_NAME\": \"Irvyn\"\n            },\n            {\n                \"DATE\": \"2022-06-06\",\n                \"FORECAST\": \"Mostly cloudy\",\n                \"ID\": 7,\n                \"LOCATION\": \"Bogota\",\n                \"TEMP\": \"16.7°C\",\n                \"USER_NAME\": \"Irvyn\"\n            },\n            {\n                \"DATE\": \"2022-06-06\",\n                \"FORECAST\": \"Cloudy\",\n                \"ID\": 8,\n                \"LOCATION\": \"Mexico\",\n                \"TEMP\": \"26.0°C\",\n                \"USER_NAME\": \"Irvyn\"\n            },\n            {\n                \"DATE\": \"2022-06-06\",\n                \"FORECAST\": \"Cloudy\",\n                \"ID\": 9,\n                \"LOCATION\": \"Mexico\",\n                \"TEMP\": \"26.0°C\",\n                \"USER_NAME\": \"Irvyn\"\n            },\n            {\n                \"DATE\": \"2022-06-07\",\n                \"FORECAST\": \"Cloudy\",\n                \"ID\": 16,\n                \"LOCATION\": \"Mexico\",\n                \"TEMP\": \"27.6°C\",\n                \"USER_NAME\": \"Irvyn\"\n            }\n        ],\n        \"query\": \"SELECT * FROM FORECAST WHERE USER_NAME=\\\"Irvyn\\\" AND DATE(\\\"now\\\")\"\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		}
+	]
+}

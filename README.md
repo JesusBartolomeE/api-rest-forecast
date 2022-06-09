@@ -34,16 +34,30 @@
 
         pip install -r requirements.txt
 
+* Antes de iniciar el servidor revise la sección de consideraciones.
+
 * Inicie el servidor.
 
         python3 app.py
 
-## Pruebas
-
 ## Consideraciones
 
-* Se debe tener una cuenta en [AccueWeather](https://developer.accuweather.com/), para que se pueda obtener una llave de acceso valida.
-* Si ya cuenta con una llave de acceso, guardela en una variable de entorno y indiquela en:
+* Se debe tener una cuenta en [AccueWeather](https://developer.accuweather.com/), para obtener una API Key valida.
+* Después de clonar el repositorio y antes de que inicie el servidor, debe de realizar los siguientes pasos.
 
-                forecast.py/apikey=os.getenv("SECRET_KEY")
+* Se debe crear el archivo .env y colocar la API Key en la variable SECRET_KEY.
 
+              export SECRET_KEY='XXXXXXXXXXXXXXX'
+
+* Ejecute el comando.
+
+                source .env
+
+* Listo, puede inicar el servidor.
+
+## Pruebas
+* Para iniciar tests de funcionalidad es necesario contar con [Postman](https://www.postman.com/) instalado
+
+* Ejecute en Postman el archivo TEST_API_FORECAST.json
+
+* Inicie el set de pruebas.
