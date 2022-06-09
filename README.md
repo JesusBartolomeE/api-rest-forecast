@@ -2,7 +2,7 @@
 
 * API REST para consultar el clima de un país.
 * Se consume el servicio del clima de la API de AccueWeather.
-* Revise la sección de consideraciones.
+* Revise la sección de consideraciones de este documento.
 
 # Stack
 
