@@ -6,7 +6,7 @@
 
 # Stack
 
-* Pytohn
+* Python 
 * Flask
 * SQLite
 
